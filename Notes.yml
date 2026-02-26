@@ -1,13 +1,24 @@
 KQL is a read-only language optimized for interactive queries. It’s designed for handling structured, semi-structured, and unstructured data, making it an excellent choice for log and telemetry analysis.
 
-Key Features:
-High-performance querying
-Rich data exploration capabilities
-Seamless integration with Azure services
+Key Features :
+  High-performance querying
+  Rich data exploration capabilities
+  Seamless integration with Azure services
 
-Example Code:
-Syslog
-| where SourceSystem contains "Linux" #//where is used to filter the logs
-| project Computer,EventTime,HostIP,HostName #// Used to select columns
-| summarize total = count() by HostIP #//Summarize is used to aggrigate data
-| order by HostIP desc #//order by is used to sort the data
+Example Code :
+  Syslog
+  | where SourceSystem contains "Linux" #//where is used to filter the logs
+  | project Computer,EventTime,HostIP,HostName #// Used to select columns
+  | summarize total = count() by HostIP #//Summarize is used to aggrigate data
+  | order by HostIP desc #//order by is used to sort the data
+
+Joining Tables :
+Joining allows you to combine data from multiple tables based on a common key. KQL supports several join types.
+
+Join Types:
+  inner: Returns rows that match in both tables.
+  leftouter: Returns all rows from the left table and matching rows from the right table.
+  rightouter: Returns all rows from the right table and matching rows from the left table.
+  fullouter: Returns all rows from both tables, with null for non-matching rows.
+  anti: Returns rows from the left table that have no match in the right table.
+  semi: Returns rows from the left table that have a match in the right table.
