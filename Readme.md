@@ -1,0 +1,1 @@
+Kusto Query Language (KQL) is a powerful query language used primarily for querying Azure Data Explorer, Log Analytics, and Application Insights. Its intuitive syntax and robust capabilities make it ideal for analyzing large datasets. This guide takes you from the basics to advanced concepts in KQL, ensuring you’re equipped to handle any query.
