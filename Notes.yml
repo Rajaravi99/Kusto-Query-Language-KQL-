@@ -1,0 +1,6 @@
+KQL is a read-only language optimized for interactive queries. It’s designed for handling structured, semi-structured, and unstructured data, making it an excellent choice for log and telemetry analysis.
+
+Key Features:
+High-performance querying
+Rich data exploration capabilities
+Seamless integration with Azure services
