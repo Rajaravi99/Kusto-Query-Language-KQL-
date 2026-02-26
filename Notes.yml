@@ -8,5 +8,6 @@ Seamless integration with Azure services
 Example Code:
 Syslog
 | where SourceSystem contains "Linux" #//where is used to filter the logs
+| project Computer,EventTime,HostIP,HostName #// Used to select columns
 | summarize total = count() by HostIP #//Summarize is used to aggrigate data
 | order by HostIP desc #//order by is used to sort the data
