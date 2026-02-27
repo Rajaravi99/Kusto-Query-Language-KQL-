@@ -24,8 +24,8 @@ Join Types:
   semi: Returns rows from the left table that have a match in the right table.
 
 A very Basic KQL logic:
-SigninLogs
-| where TimeGenerated >= ago(5m)
-| where ResultSignature =~ "FAILURE" and ResultDescription startswith "Error"
-| summarize failed_logins = count() by UserPrincipalName
-| where failed_logins >= 2
+  SigninLogs
+  | where TimeGenerated >= ago(5m)
+  | where ResultSignature =~ "FAILURE" and ResultDescription startswith "Error"
+  | summarize failed_logins = count() by UserPrincipalName
+  | where failed_logins >= 2
