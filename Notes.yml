@@ -22,3 +22,10 @@ Join Types:
   fullouter: Returns all rows from both tables, with null for non-matching rows.
   anti: Returns rows from the left table that have no match in the right table.
   semi: Returns rows from the left table that have a match in the right table.
+
+A very Basic KQL logic:
+SigninLogs
+| where TimeGenerated >= ago(5m)
+| where ResultSignature =~ "FAILURE" and ResultDescription startswith "Error"
+| summarize failed_logins = count() by UserPrincipalName
+| where failed_logins >= 2
